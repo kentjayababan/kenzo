@@ -4,11 +4,7 @@
  * and open the template in the editor.
  */
 package tripsrecordsystem;
-
-/**
- *
- * @author mypc
- */
+  
 public class TripsRecordSystem {
 
     /**
