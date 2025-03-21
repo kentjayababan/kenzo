@@ -7,7 +7,7 @@ package user;
 
 import config.Session;
 import javax.swing.JOptionPane;
-import tripsrecordsystem.loginForm;
+import movieapp.loginForm;
 
 /**
  *

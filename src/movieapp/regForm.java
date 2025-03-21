@@ -1,6 +1,7 @@
 
-package tripsrecordsystem;
+package movieapp;
 
+import movieapp.loginForm;
 import config.dbConnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -55,9 +56,6 @@ public class regForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jRegister = new javax.swing.JButton();
@@ -72,11 +70,13 @@ public class regForm extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(148, 22, 22));
@@ -85,92 +85,82 @@ public class regForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 29, 29));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText(" TRUCKING CORP...");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 130, 10));
-
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Century Schoolbook", 1, 36)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("SHOOK ");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 160, 30));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rdm3_1.jpg"))); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 200, 250));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Complete Name");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 90, 10));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 100, 20));
 
-        jRegister.setBackground(new java.awt.Color(255, 51, 51));
-        jRegister.setForeground(new java.awt.Color(255, 255, 255));
+        jRegister.setBackground(new java.awt.Color(204, 204, 204));
+        jRegister.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jRegister.setForeground(new java.awt.Color(102, 102, 102));
         jRegister.setText("REGISTER");
+        jRegister.setInheritsPopupMenu(true);
         jRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRegisterActionPerformed(evt);
             }
         });
-        jPanel2.add(jRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 90, -1));
+        jPanel2.add(jRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 110, -1));
 
-        jUserType.setBackground(new java.awt.Color(255, 51, 51));
+        jUserType.setBackground(new java.awt.Color(204, 204, 204));
         jUserType.setForeground(new java.awt.Color(255, 255, 255));
-        jUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USER", "ADMIN", " ", " " }));
+        jUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USER", "ADMIN" }));
         jUserType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jUserTypeActionPerformed(evt);
             }
         });
-        jPanel2.add(jUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 140, -1));
+        jPanel2.add(jUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 140, -1));
 
         pword.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(pword, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 140, 30));
+        pword.setCaretColor(new java.awt.Color(255, 0, 0));
+        jPanel2.add(pword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 140, 30));
 
-        uname.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 140, 30));
+        uname.setBackground(new java.awt.Color(204, 204, 204));
+        uname.setCaretColor(new java.awt.Color(255, 0, 0));
+        uname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unameActionPerformed(evt);
+            }
+        });
+        jPanel2.add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 140, 30));
 
         cnumber.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(cnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 140, 30));
+        jPanel2.add(cnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 140, 30));
 
         email.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 140, 30));
+        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 140, 30));
 
         CompleteName.setBackground(new java.awt.Color(215, 215, 215));
-        jPanel2.add(CompleteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 140, 30));
+        jPanel2.add(CompleteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 140, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Email");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 30, 10));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 40, 20));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Contact Number");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 90, 10));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 100, 20));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Username");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 10));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 20, 70, 20));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("User Type");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, 10));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 120, 70, 20));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(102, 102, 102));
         jLabel10.setText("Password");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 60, 10));
-
-        jLabel8.setBackground(new java.awt.Color(255, 102, 102));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/123.jpg"))); // NOI18N
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 60, 40));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 70, 20));
 
         jLabel9.setBackground(new java.awt.Color(115, 5, 5));
         jLabel9.setFont(new java.awt.Font("Stencil", 3, 10)); // NOI18N
@@ -184,43 +174,56 @@ public class regForm extends javax.swing.JFrame {
         jLabel13.setText("SHOOK TRUCKING");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 540, 200, 30));
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(102, 102, 102));
         jButton1.setText("Cancel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 370, 250));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/12.jpg"))); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 290));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("REGISTRATION FORM");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 10));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 360, 290));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 280));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/123.jpg"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 290, 290));
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        jLabel8.setText("REGISTRATION FORM");
+        jPanel3.add(jLabel8);
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 30));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 650, 320));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        loginForm lgf = new loginForm();
+        lgf.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jUserTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUserTypeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jUserTypeActionPerformed
 
     private void jRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRegisterActionPerformed
-    
-        
-        
 
         if(CompleteName.getText().isEmpty()||email.getText().isEmpty()||cnumber.getText().isEmpty()
             ||uname.getText().isEmpty()||pword.getText().isEmpty())
 
         {
-            JOptionPane.showMessageDialog(null, "Fill apa ang wa na fill apan duh!");
+            JOptionPane.showMessageDialog(null, "tarungag Fill up bruduhh!");
         }else if(pword.getText().length()< 8){
             JOptionPane.showMessageDialog(null, "Password character should be 8 above");
             pword.setText("");
@@ -233,7 +236,7 @@ public class regForm extends javax.swing.JFrame {
         else{
 
             dbConnector dbc=new dbConnector();
-            if(dbc.insertData("INSERT INTO tbl_user(u_name, u_email, u_number, u_username, u_password, u_status, u_type) "
+            if(dbc.insertData("INSERT INTO tbl_user(u_fname, u_email, u_contact, u_username, u_password, u_status, u_type) "
                 + "VALUES('"+CompleteName.getText()+"','"+email.getText()+"','"+cnumber.getText()+"','"+uname.getText()+"','"+pword.getText()+"','PENDING','"+jUserType.getSelectedItem()+"')"))
         {
             JOptionPane.showMessageDialog(null, "Inserted Successfully");
@@ -247,14 +250,11 @@ public class regForm extends javax.swing.JFrame {
         }
 
         }
-
     }//GEN-LAST:event_jRegisterActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        loginForm lgf = new loginForm();
-        lgf.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void unameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_unameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,10 +292,8 @@ public class regForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -305,6 +303,7 @@ public class regForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton jRegister;
     private javax.swing.JComboBox<String> jUserType;
     private javax.swing.JTextField pword;
